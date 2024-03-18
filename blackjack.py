@@ -25,12 +25,12 @@ def main():
         print("="*77)
         print(f"\n{player1.name}'s hand:")
         print(player1.hand)
-        print(f"Hand total: {player1.hand_value}")  # Show hand total
+        print(f"Hand total: {player1.hand_value}")
         print("="*77)
         print(f"\nDealer's hand:")
         print(dealer1.show_hand())
-        print(f"Hand total: {dealer1.hand_value}")  # Show hand total
-        print(f"\nCards left in the deck: {new_deck.cards_left}")  # Show cards left
+        print(f"Hand total: {dealer1.hand_value}") 
+        print(f"\nCards left in the deck: {new_deck.cards_left}")
 
         # Player's turn
         while True:
@@ -43,7 +43,7 @@ def main():
                 print("="*77)
                 print(f"\n{player1.name}'s hand:")
                 print(player1.hand)
-                print(f"Hand total: {player1.hand_value}")  # Show hand total
+                print(f"Hand total: {player1.hand_value}")
                 if player1.is_bust:
                     print(f"{player1.name} busts! Dealer wins!")
                     break
@@ -58,7 +58,7 @@ def main():
             print("="*77)
             print(f"\nDealer's hand:")
             print(dealer1.hand)
-            print(f"Hand total: {dealer1.hand_value}")  # Show hand total
+            print(f"Hand total: {dealer1.hand_value}")
 
             # Determine winner
             if dealer1.is_bust or player1.hand_value > dealer1.hand_value:
@@ -71,7 +71,9 @@ def main():
         # Ask if the player wants to play again
         print("="*77)
         play_again = input("\nPlay again? (y/n): ").lower()
-        if play_again != 'y':
+        if play_again == 'y':
+            continue
+        else:
             print("Thanks for playing!")
             break
 
